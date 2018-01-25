@@ -7,6 +7,16 @@ The examples require a local NATS server to be running. To start a NATS server a
 
     $ docker pull nats
     $ docker run -p 4222:4222 -p 6222:6222 -p 8222:8222 -d --name nats-main nats
+    
+## Examples
+
+### PubSub
+
+### Streaming
+
+### Queue
+
+### Request / Reply
 
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-example/issues).
