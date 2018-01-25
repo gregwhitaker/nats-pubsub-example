@@ -1,6 +1,6 @@
 # nats-example
 
-An example of using [NATS](http://nats.io) to do pub-sub and streaming messaging.
+An example of using [NATS](http://nats.io) to do request/reply, pub-sub, and streaming messaging.
 
 ## Prerequisites
 The examples require a local NATS server to be running. To start a NATS server as a Docker container run the following commands:
