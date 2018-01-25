@@ -2,7 +2,7 @@
 
 An example of using [NATS](http://nats.io) to do pub-sub and streaming messaging.
 
-# Prerequisites
+## Prerequisites
 The examples in this repository require the following:
 
 * Running NATS Server instance
