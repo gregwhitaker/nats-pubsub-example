@@ -16,6 +16,6 @@ public class Main {
         LOGGER.info("Starting NATS Example PubSub Service");
 
         Timer timer = new Timer();
-        timer.schedule(new MetricsPublishTask(Nats.connect("nats://localhost:4222")),0,1_000);
+        timer.schedule(new MetricsPublishTask(Nats.connect("nats://localhost:4222")), 0, 1_000);
     }
 }
