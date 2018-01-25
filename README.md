@@ -3,11 +3,10 @@
 An example of using [NATS](http://nats.io) to do pub-sub and streaming messaging.
 
 ## Prerequisites
-The examples in this repository require the following:
+The examples require a local NATS server to be running. To start a NATS server as a Docker container run the following commands:
 
-* Running NATS Server instance
-
-    The NATS server can be easily started as a Docker container by following the [instructions](https://hub.docker.com/_/nats/) here.
+    $ docker pull nats
+    $ docker run -p 4222:4222 -p 6222:6222 -p 8222:8222 -d --name nats-main nats
 
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-example/issues).
