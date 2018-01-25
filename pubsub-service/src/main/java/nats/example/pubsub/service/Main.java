@@ -1,9 +1,10 @@
 package nats.example.pubsub.service;
 
-import io.nats.client.Connection;
 import io.nats.client.Nats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Timer;
 
 /**
  * Starts the NATS Example PubSub Service.
@@ -14,6 +15,7 @@ public class Main {
     public static void main(String... args) throws Exception {
         LOGGER.info("Starting NATS Example PubSub Service");
 
-        Connection conn = Nats.connect("nats://localhost:4222");
+        Timer timer = new Timer();
+        timer.schedule(new MetricsPublishTask(Nats.connect("nats://localhost:4222")),0,1_000);
     }
 }
