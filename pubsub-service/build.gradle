@@ -9,3 +9,5 @@ dependencies {
     compile 'io.nats:jnats:1.0'
 
 }
+
+mainClassName = 'nats.example.pubsub.service.Main'

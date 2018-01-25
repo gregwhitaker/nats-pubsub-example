@@ -8,3 +8,5 @@ sourceCompatibility = 1.8
 dependencies {
     compile 'io.nats:java-nats-streaming:0.5.0'
 }
+
+mainClassName = 'nats.example.streaming.client.Main'

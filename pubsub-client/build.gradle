@@ -7,5 +7,6 @@ sourceCompatibility = 1.8
 
 dependencies {
     compile 'io.nats:jnats:1.0'
-
 }
+
+mainClassName = 'nats.example.pubsub.client.Main'
