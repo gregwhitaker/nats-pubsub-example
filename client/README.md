@@ -1,1 +1,0 @@
-# nats-example client
