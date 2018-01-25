@@ -5,6 +5,9 @@ import io.nats.client.Nats;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Starts the NATS Example PubSub Client.
+ */
 public class Main {
     private static final Logger LOGGER = LoggerFactory.getLogger(Main.class);
 

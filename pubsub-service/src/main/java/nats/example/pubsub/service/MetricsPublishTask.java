@@ -11,7 +11,7 @@ import com.sun.management.OperatingSystemMXBean;
 import java.util.TimerTask;
 
 /**
- *
+ * Timer task that published system metrics once per second to NATS topic "metrics-pubsub".
  */
 public class MetricsPublishTask extends TimerTask {
     private static final Logger LOGGER = LoggerFactory.getLogger(MetricsPublishTask.class);
@@ -27,9 +27,9 @@ public class MetricsPublishTask extends TimerTask {
     @Override
     public void run() {
         MetricsMessage metricsMessage = new MetricsMessage();
-        metricsMessage.setCpuPercentage(Math.round(osBean.getSystemCpuLoad() * 100.0) / 100.0);
-        metricsMessage.setTotalPhysicalMemory(osBean.getTotalPhysicalMemorySize() / 1024 / 1024);
-        metricsMessage.setFreePhysicalMemory(osBean.getFreePhysicalMemorySize() / 1024 / 1024);
+        metricsMessage.cpuPercentage = Math.round(osBean.getSystemCpuLoad() * 100.0) / 100.0;
+        metricsMessage.totalPhysicalMemory = osBean.getTotalPhysicalMemorySize() / 1024 / 1024;
+        metricsMessage.freePhysicalMemory = osBean.getFreePhysicalMemorySize() / 1024 / 1024;
 
         try {
             String msg = gson.toJson(metricsMessage);
@@ -42,35 +42,11 @@ public class MetricsPublishTask extends TimerTask {
     }
 
     /**
-     *
+     * Message published to clients containing system metrics.
      */
     private static class MetricsMessage {
-        private double cpuPercentage;
-        private double totalPhysicalMemory;
-        private double freePhysicalMemory;
-
-        public double getCpuPercentage() {
-            return cpuPercentage;
-        }
-
-        public void setCpuPercentage(double cpuPercentage) {
-            this.cpuPercentage = cpuPercentage;
-        }
-
-        public double getTotalPhysicalMemory() {
-            return totalPhysicalMemory;
-        }
-
-        public void setTotalPhysicalMemory(double totalPhysicalMemory) {
-            this.totalPhysicalMemory = totalPhysicalMemory;
-        }
-
-        public double getFreePhysicalMemory() {
-            return freePhysicalMemory;
-        }
-
-        public void setFreePhysicalMemory(double freePhysicalMemory) {
-            this.freePhysicalMemory = freePhysicalMemory;
-        }
+        double cpuPercentage;
+        double totalPhysicalMemory;
+        double freePhysicalMemory;
     }
 }
