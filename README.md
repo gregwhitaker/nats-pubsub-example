@@ -2,6 +2,8 @@
 
 An example of using [NATS](https://nats.io) to do pubsub messaging.
 
+This example starts a service that publishes CPU metrics every second to a `metrics-pubsub` topic. The topic is subscribed to by 1 to many clients each receiving the CPU metrics messages published by the service.
+
 ## Background
 NATS publish subscribe is a one-to-many communication. A publisher sends a message on a subject. Any active subscriber listening on that subject receives the message. 
 
