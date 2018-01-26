@@ -9,12 +9,22 @@ The examples require a local NATS server to be running. To start a NATS server a
     $ docker run -p 4222:4222 -p 6222:6222 -p 8222:8222 -d --name nats-main nats
     
 ## Examples
-The following example interactions are included in this repository.
+Examples of the following messaging interactions are available in this repository.
 
 ### PubSub
 NATS publish subscribe is a one-to-many communication. A publisher sends a message on a subject. Any active subscriber listening on that subject receives the message. 
 
-The NATS pubsub model is "At-Most-Once-Delivery". Ff a subscriber is not listening on the subject (no subject match), or is not active when the message is sent, the message is not received. 
+The NATS pubsub model is "At-Most-Once-Delivery". If a subscriber is not listening on the subject (no subject match), or is not active when the message is sent, the message is not received. 
+
+#### Running the PubSub Client
+You can start the PubSub client using the following command:
+
+    $ ./gradlew :pubsub-client:run
+
+#### Running the PubSub Service
+You can start the PubSub service using the following command:
+
+    $ ./gradlew :pubsub-service:run
 
 More information can be found in the [NATS Documentation](https://nats.io/documentation/concepts/nats-pub-sub/).
 
