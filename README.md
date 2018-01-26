@@ -16,17 +16,17 @@ NATS publish subscribe is a one-to-many communication. A publisher sends a messa
 
 The NATS pubsub model is "At-Most-Once-Delivery". If a subscriber is not listening on the subject (no subject match), or is not active when the message is sent, the message is not received. 
 
+More information can be found in the [NATS Documentation](https://nats.io/documentation/concepts/nats-pub-sub/).
+
 #### Running the PubSub Client
-You can start the PubSub client using the following command:
+You can start the [PubSub Client](pubsub-client/README.md) using the following command:
 
     $ ./gradlew :pubsub-client:run
 
 #### Running the PubSub Service
-You can start the PubSub service using the following command:
+You can start the [PubSub Service](pubsub-service/README.md) using the following command:
 
     $ ./gradlew :pubsub-service:run
-
-More information can be found in the [NATS Documentation](https://nats.io/documentation/concepts/nats-pub-sub/).
 
 ### Streaming
 
