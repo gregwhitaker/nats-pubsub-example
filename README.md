@@ -2,6 +2,7 @@
 
 An example of using [NATS](https://nats.io) to do pubsub messaging.
 
+## Background
 NATS publish subscribe is a one-to-many communication. A publisher sends a message on a subject. Any active subscriber listening on that subject receives the message. 
 
 The NATS pubsub model is "At-Most-Once-Delivery". If a subscriber is not listening on the subject (no subject match), or is not active when the message is sent, the message is not received. 
