@@ -1,4 +1,4 @@
-# nats-example
+# nats-pubsub-example
 
 An example of using [NATS](https://nats.io) to do pubsub messaging.
 
