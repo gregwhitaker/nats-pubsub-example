@@ -22,6 +22,13 @@ The examples require a local NATS server to be running. To start a NATS server a
 You can start the [PubSub Client](pubsub-client/README.md) using the following command:
 
     $ ./gradlew :pubsub-client:run
+    
+Once the client and service is running you will see messages similar to the following in the terminal:
+
+    [main] INFO nats.example.pubsub.client.Main - Starting NATS Example PubSub Client
+    [jnats-subscriptions] INFO nats.example.pubsub.client.Main - Received Message: "{\"cpuPercentage\":0.0,\"totalPhysicalMemory\":16384.0,\"freePhysicalMemory\":525.0}"
+    [jnats-subscriptions] INFO nats.example.pubsub.client.Main - Received Message: "{\"cpuPercentage\":0.27,\"totalPhysicalMemory\":16384.0,\"freePhysicalMemory\":454.0}"
+    [jnats-subscriptions] INFO nats.example.pubsub.client.Main - Received Message: "{\"cpuPercentage\":0.06,\"totalPhysicalMemory\":16384.0,\"freePhysicalMemory\":362.0}"
 
 You can start multiple client instances to see them each receiving the same messages.
 
@@ -29,6 +36,13 @@ You can start multiple client instances to see them each receiving the same mess
 You can start the [PubSub Service](pubsub-service/README.md) using the following command:
 
     $ ./gradlew :pubsub-service:run
+
+Once the service is running you will see messages similar to the following in the terminal:
+
+    [main] INFO nats.example.pubsub.service.Main - Starting NATS Example PubSub Service
+    [Timer-0] INFO nats.example.pubsub.service.MetricsPublishTask - Publishing: {"cpuPercentage":0.0,"totalPhysicalMemory":16384.0,"freePhysicalMemory":552.0}
+    [Timer-0] INFO nats.example.pubsub.service.MetricsPublishTask - Publishing: {"cpuPercentage":0.28,"totalPhysicalMemory":16384.0,"freePhysicalMemory":448.0}
+    [Timer-0] INFO nats.example.pubsub.service.MetricsPublishTask - Publishing: {"cpuPercentage":0.04,"totalPhysicalMemory":16384.0,"freePhysicalMemory":564.0}
 
 ## Bugs and Feedback
 For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-example/issues).
