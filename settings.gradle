@@ -3,3 +3,5 @@ include 'pubsub-client'
 include 'pubsub-service'
 include 'streaming-client'
 include 'streaming-service'
+include 'pubsub'
+
