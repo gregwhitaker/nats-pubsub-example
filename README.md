@@ -1,26 +1,24 @@
 # nats-example
 
-An example of using [NATS](https://nats.io) to do request/reply, pubsub, queued, and streaming messaging.
+An example of using [NATS](https://nats.io) to do request/reply, pubsub, and queued messaging.
 
 ## Prerequisites
 The examples require a local NATS server to be running. To start a NATS server as a Docker container run the following commands:
 
     $ docker pull nats
     $ docker run -p 4222:4222 -p 6222:6222 -p 8222:8222 -d --name nats-main nats
-    
+
+## Supported Interaction Models
+
+### PubSub
+NATS publish subscribe is a one-to-many communication. A publisher sends a message on a subject. Any active subscriber listening on that subject receives the message. 
+
+The NATS pubsub model is "At-Most-Once-Delivery". If a subscriber is not listening on the subject (no subject match), or is not active when the message is sent, the message is not received. 
+
+More information can be found in the [NATS Documentation](https://nats.io/documentation/concepts/nats-pub-sub/).
+
 ## Examples
 Examples of the following messaging interactions are available in this repository.
-
-* PubSub
-
-    NATS publish subscribe is a one-to-many communication. A publisher sends a message on a subject. Any active subscriber listening on that subject receives the message. 
-    
-    The NATS pubsub model is "At-Most-Once-Delivery". If a subscriber is not listening on the subject (no subject match), or is not active when the message is sent, the message is not received. 
-    
-    More information can be found in the [NATS Documentation](https://nats.io/documentation/concepts/nats-pub-sub/).
-* Streaming
-* Queue
-* Request / Reply
 
 ### PubSub
 
