@@ -17,15 +17,15 @@ The examples require a local NATS server to be running. To start a NATS server a
     $ docker pull nats
     $ docker run -p 4222:4222 -p 6222:6222 -p 8222:8222 -d --name nats-main nats
 
-## Example
-Examples of the following messaging interactions are available in this repository.
-
-### Running the PubSub Client
+## Running the Example
+### Start the PubSub Client
 You can start the [PubSub Client](pubsub-client/README.md) using the following command:
 
     $ ./gradlew :pubsub-client:run
 
-### Running the PubSub Service
+You can start multiple client instances to see them each receiving the same messages.
+
+### Start the PubSub Service
 You can start the [PubSub Service](pubsub-service/README.md) using the following command:
 
     $ ./gradlew :pubsub-service:run
