@@ -45,7 +45,7 @@ Once the service is running you will see messages similar to the following in th
     [Timer-0] INFO nats.example.pubsub.service.MetricsPublishTask - Publishing: {"cpuPercentage":0.04,"totalPhysicalMemory":16384.0,"freePhysicalMemory":564.0}
 
 ## Bugs and Feedback
-For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-example/issues).
+For bugs, questions and discussions please use the [Github Issues](https://github.com/gregwhitaker/nats-pubsub-example/issues).
 
 ## License
 MIT License
